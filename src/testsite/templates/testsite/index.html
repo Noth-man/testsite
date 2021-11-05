@@ -2,8 +2,12 @@
 {% block title %}index{% endblock %}
 
 {% block left_content %}
-<div>left_content</div>
+    {% for thread in thread_list %}
+        <div>
+            <a href="/thread/{{ thread.id }}/">{{ thread.name }}_{{ thread.id }}</a>
+        </div>
+    {% endfor %}
 {% endblock %}
 {% block right_content %}
-<div>right_content</div>
+    <div>right_content</div>
 {% endblock %}

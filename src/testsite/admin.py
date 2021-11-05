@@ -2,5 +2,11 @@ from django.contrib import admin
 from .models import Threads, Comments
 # Register your models here.
 
-admin.site.register(Threads)
-admin.site.register(Comments)
+class ThreadsAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name')
+
+class CommentsAdmin(admin.ModelAdmin):
+    list_display = ('id', 'thread_id', 'paremt_id', 'body', 'body')
+
+admin.site.register(Threads, ThreadsAdmin)
+admin.site.register(Comments, CommentsAdmin)

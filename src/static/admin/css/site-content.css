@@ -1,0 +1,29 @@
+.site-content {
+    position: relative; }
+
+.site-content__left {
+    display: flex;
+    align-items: center;
+    width: 785px;
+    margin: 10px 5px 10px 10px; 
+    background-color: aliceblue;
+}
+
+.site-content__right {
+    display: flex;
+    align-items: center; 
+    width: 325px;
+    margin: 10px 10px 10px 5px; 
+    background-color: aliceblue;
+}
+
+.site-content__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem; }
+    @media (min-width: 800px) {
+      .site-content__wrapper {
+        padding-top: 0;
+        padding-bottom: 0; } }   

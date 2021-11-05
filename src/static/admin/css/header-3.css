@@ -8,7 +8,7 @@
 
 .site-header {
   position: relative;
-  background-color: #ffa65e; }
+  background-color: #76ffb4; }
 
 .site-header__end {
   display: flex;
@@ -35,7 +35,7 @@
     right: 0;
     left: 0;
     z-index: -1;
-    background-color: #ffa65e;
+    background-color: #76ffb4;
     visibility: hidden;
     opacity: 0;
     transform: translateY(-100%);

@@ -1,6 +1,5 @@
 {% load static %}
 <!DOCTYPE html>
-
 <html>
   <head>
     <meta charset="utf-8">
@@ -8,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="{% static 'admin/css/reset.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'admin/css/style.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'admin/css/header-3.css' %}">   
+    <link rel="stylesheet" type="text/css" href="{% static 'admin/css/header-3.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'admin/css/site-content.css' %}">
   </head>
   <body>
     <header class="site-header">
@@ -25,7 +25,7 @@
               <li class="nav__item"><a href="/">Home</a></li>
               <li class="nav__item"><a href="#">New</a></li>
               <li class="nav__item"><a href="#">Category</a></li>
-              <li class="nav__item"><a href="#">Create</a></li>
+              <li class="nav__item"><a href="{% url 'testsite:createThread' %}">Create</a></li>
               <li class="nav__item"><a href="#">Contact</a></li>
             </ul>
           </nav>
@@ -46,12 +46,18 @@
         </div>
       </div>
     </header>
-
+    <div class="site-content">
       <div class="wrapper site-content__wrapper">
-        {% block content %}
-        {% endblock %}
+        <div class="site-content__left">
+          {% block left_content %}
+          {% endblock %}
+        </div>
+        <div class="site-content__right">
+          {% block right_content %}
+          {% endblock %}
+        </div>
       </div>
-
+    </div>
     <script src="{% static 'admin/js/header-3.js' %}"></script>
   </body>
 </html>

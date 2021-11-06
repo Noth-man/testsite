@@ -3,6 +3,12 @@
 
 {% block left_content %}
 <div>{{ threads.name }}</div>
+<div>
+    {% for comment in comment_list %}
+        <div>{{ comment.body }}</div>
+        <div>{{ comment.thread_id }}</div>
+    {% endfor %}
+</div>
 {% endblock %}
 {% block right_content %}
 <div>right_content</div>

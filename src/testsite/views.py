@@ -21,6 +21,6 @@ class ThreadView(generic.DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['thread_list'] = Threads.objects.all()
-        context['comment_list'] = Comments.objects.all()
+        comment_list = Comments.objects.filter(thread_id=self.kwargs['pk'])
+        context['comment_list'] = comment_list
         return context

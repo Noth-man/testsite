@@ -8,8 +8,9 @@ class IndexView(generic.TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['thread_list'] = Threads.objects.all().order_by('-id')
-        context['comment_list'] = Comments.objects.all()
+        thread_ids = Threads.objects.values_list('id').order_by('-id')[:10]
+        context['thread_list'] = Threads.objects.order_by('-id')[:10]
+        context['comment_list'] = Comments.objects.filter(thread_id__in=thread_ids)
         return context
 
 class CreateThreadView(generic.TemplateView):

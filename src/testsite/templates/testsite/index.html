@@ -3,8 +3,15 @@
 
 {% block left_content %}
     {% for thread in thread_list %}
-        <div>
-            <a href="/thread/{{ thread.id }}/">{{ thread.name }}_{{ thread.id }}</a>
+        <div class="thread-content">
+            <div class="thread-name"><a href="/thread/{{ thread.id }}/">{{ thread.name }}</a></div>
+            <div class="thread-first-comment">
+                {% for comment in comment_list %}
+                    {% if thread.id == comment.thread_id %}
+                        {{ comment.body }}
+                    {% endif %}
+                {% endfor %}
+            </div>
         </div>
     {% endfor %}
 {% endblock %}

@@ -3,6 +3,7 @@
 
 .site-content__left {
     display: flex;
+    flex-flow: column;
     align-items: center;
     width: 785px;
     margin: 10px 5px 10px 10px; 
@@ -27,3 +28,12 @@
       .site-content__wrapper {
         padding-top: 0;
         padding-bottom: 0; } }   
+
+.thread-content {
+    width: 785px;
+}
+
+.thread-name {
+    overflow-wrap: break-word;
+    word-break: break-all;
+}

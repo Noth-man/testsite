@@ -2,13 +2,24 @@
 {% block title %}thread{% endblock %}
 
 {% block left_content %}
-<div>{{ threads.name }}</div>
-<div>
+<div class="thread-title">{{ threads.name }}</div>
+<div class="message-flexbox">
     {% for comment in comment_list %}
-        <div>{{ comment.body }}</div>
-        <div>{{ comment.thread_id }}</div>
+        <div class="message">
+            <div class="data-box">
+                <p>{{ comment.pub_date }}</p>
+            </div>
+            <div class="body-box">{{ comment.body }}</div>
+        </div>
     {% endfor %}
 </div>
+<form action="{% url 'testsite:thread' threads.id %}" method="post">
+    {% csrf_token %}
+    <div>messageを送信</div>
+    <textarea name="message" rows="4" cols="40"></textarea><br>
+    <input type="hidden" name="id" value="{{ threads.id }}">
+    <input type="submit" value="送信">
+</form>
 {% endblock %}
 {% block right_content %}
 <div>right_content</div>

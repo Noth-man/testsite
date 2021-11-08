@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import generic
 from .models import Threads, Comments
 # Create your views here.
@@ -8,9 +8,9 @@ class IndexView(generic.TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        thread_ids = Threads.objects.values_list('id').order_by('-id')[:10]
+        thread_ids = Threads.objects.values_list('id').order_by('-id')[:10] # Threads Model 最新10件のid取得
         context['thread_list'] = Threads.objects.order_by('-id')[:10]
-        context['comment_list'] = Comments.objects.filter(thread_id__in=thread_ids)
+        context['comment_list'] = Comments.objects.filter(thread_id__in=thread_ids) 
         return context
 
 class CreateThreadView(generic.TemplateView):
@@ -22,6 +22,13 @@ class ThreadView(generic.DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        comment_list = Comments.objects.filter(thread_id=self.kwargs['pk'])
-        context['comment_list'] = comment_list
+        context['comment_list'] = Comments.objects.filter(thread_id=self.kwargs['pk'])
         return context
+
+    def post(self, request, *args, **kwargs):
+        message = self.request.POST.get("message")
+        thread_id = self.request.POST.get("id")
+        comment = Comments(thread_id=thread_id, body=message)
+        comment.save()
+        url = '/thread/' + thread_id + '/'
+        return redirect(to=url)

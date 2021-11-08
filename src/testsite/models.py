@@ -13,6 +13,6 @@ class Comments(models.Model):
     thread_id = models.IntegerField(blank=True, null=True)
     paremt_id = models.IntegerField(blank=True, null=True)
     body = models.TextField()
-    pub_date = models.DateTimeField('date published')
+    pub_date = models.DateTimeField(auto_now_add=True)
     class Meta:
        verbose_name_plural = "コメント"

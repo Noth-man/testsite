@@ -2,12 +2,8 @@
     position: relative; }
 
 .site-content__left {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
     width: 785px;
     margin: 10px 5px 10px 10px; 
-    background-color: aliceblue;
 }
 
 .site-content__right {
@@ -29,11 +25,43 @@
         padding-top: 0;
         padding-bottom: 0; } }   
 
+
+/* index.html */
+
 .thread-content {
     width: 785px;
+    display: flex;
+    flex-flow: column;
+}
+
+.th-box {
+    background-color: aliceblue;
+    margin: 5px 0 5px 0;
+    border: 1px solid rgb(187, 196, 185);
 }
 
 .thread-name {
     overflow-wrap: break-word;
     word-break: break-all;
+}
+
+/* thread.html */
+
+.message-flexbox {
+    width: 785px;
+    display: flex;
+    flex-flow: column;
+}
+
+.thread-title {
+    background-color: aliceblue;
+    margin: 5px 0 5px 0;
+    border: 1px solid rgb(187, 196, 185);
+}
+
+.message {
+    width: 785px;
+    background-color: aliceblue;
+    margin: 5px 0 5px 0;
+    border: 1px solid rgb(187, 196, 185);
 }

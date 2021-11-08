@@ -10,11 +10,22 @@ class IndexView(generic.TemplateView):
         context = super().get_context_data(**kwargs)
         thread_ids = Threads.objects.values_list('id').order_by('-id')[:10] # Threads Model 最新10件のid取得
         context['thread_list'] = Threads.objects.order_by('-id')[:10]
-        context['comment_list'] = Comments.objects.filter(thread_id__in=thread_ids) 
+        context['comment_list'] = Comments.objects.filter(thread_id__in=thread_ids)
         return context
+
 
 class CreateThreadView(generic.TemplateView):
     template_name = 'testsite/createThread.html'
+
+    def post(self, request, *args, **kwargs):
+        last_id = Threads.objects.order_by('-pk')[:1].values()[0]['id']
+        regist_id = last_id + 1
+        comment = Comments(thread_id=regist_id, body=self.request.POST.get("first-message"))
+        comment.save()
+        thread = Threads(id=regist_id, name=self.request.POST.get("thread-name"))
+        thread.save()
+        url = '/thread/' + str(regist_id) + '/'
+        return redirect(to=url)
 
 class ThreadView(generic.DetailView):
     model = Threads

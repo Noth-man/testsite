@@ -2,7 +2,16 @@
 {% block title %}createThread{% endblock %}
 
 {% block left_content %}
-<div>left_content</div>
+<div class="create-thread">
+    <form action="{% url 'testsite:createThread' %}" method="post">
+        {% csrf_token %}
+        <p>スレッド名</p>
+        <input type="text" name="thread-name"><br>
+        <p>最初のコメント</p>
+        <textarea name="first-message" rows="4" cols="40"></textarea><br>
+        <input type="submit" value="作成">
+    </form>
+</div>
 {% endblock %}
 {% block right_content %}
 <div>right_content</div>

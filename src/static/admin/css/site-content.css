@@ -7,8 +7,6 @@
 }
 
 .site-content__right {
-    display: flex;
-    align-items: center; 
     width: 325px;
     margin: 10px 10px 10px 5px; 
     background-color: aliceblue;

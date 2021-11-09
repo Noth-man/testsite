@@ -7,11 +7,7 @@
         <div class="th-box">
             <div class="thread-name"><a href="/thread/{{ thread.id }}/">{{ thread.name }}</a></div>
             <div class="thread-first-comment">
-                {% for comment in comment_list %}
-                    {% if thread.id == comment.thread_id %}
-                        {{ comment.body }}
-                    {% endif %}
-                {% endfor %}
+                {{ thread.first_body }}
             </div>
         </div>
         {% endfor %}

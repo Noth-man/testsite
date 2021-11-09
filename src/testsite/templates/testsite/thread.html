@@ -16,7 +16,7 @@
 <form action="{% url 'testsite:thread' threads.id %}" method="post">
     {% csrf_token %}
     <div>messageを送信</div>
-    <textarea name="message" rows="4" cols="40"></textarea><br>
+    <textarea name="message" rows="4" cols="40" maxlength="2500" required></textarea><br>
     <input type="hidden" name="id" value="{{ threads.id }}">
     <input type="submit" value="送信">
 </form>

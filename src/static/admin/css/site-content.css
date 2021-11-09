@@ -89,3 +89,11 @@
     margin: 5px 0 5px 0;
     border: 1px solid rgb(187, 196, 185);
 }
+
+.body-box p {
+    margin: 5px;
+}
+
+.data-box p {
+    margin: 5px;
+}

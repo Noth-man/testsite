@@ -9,7 +9,7 @@
             <div class="data-box">
                 <p>{{ forloop.counter }} : {{ comment.pub_date }}</p>
             </div>
-            <div class="body-box">{{ comment.body | linebreaksbr }}</div>
+            <div class="body-box"><p>{{ comment.body | linebreaksbr }}</p></div>
         </div>
     {% endfor %}
 </div>
@@ -22,5 +22,5 @@
 </form>
 {% endblock %}
 {% block right_content %}
-<div>right_content</div>
+<div>ad_content</div>
 {% endblock %}

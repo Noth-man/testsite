@@ -5,14 +5,14 @@
     <div class="thread-content">
         {% for thread in thread_list %}
         <div class="th-box">
-            <div class="thread-name"><a href="/thread/{{ thread.id }}/">{{ thread.name }}</a></div>
+            <div class="thread-name" id="change-color"><a href="/thread/{{ thread.id }}/">{{ thread.name }}</a></div>
             <div class="thread-first-comment">
-                {{ thread.first_body }}
+                <p>{{ thread.first_body | linebreaksbr }}</p>
             </div>
         </div>
         {% endfor %}
     </div>
 {% endblock %}
 {% block right_content %}
-    <div>right_content</div>
+    <div>ad_content</div>
 {% endblock %}

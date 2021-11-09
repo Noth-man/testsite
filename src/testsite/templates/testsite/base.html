@@ -14,7 +14,7 @@
     <header class="site-header">
       <div class="wrapper site-header__wrapper">
         <div class="site-header__start">
-          <a href="/" class="brand">sitename</a>
+          <a href="/" class="brand">掲示板</a>
         </div>
         <div class="site-header__end">
           <nav class="nav">
@@ -22,9 +22,9 @@
               menu
             </button>
             <ul class="nav__wrapper">
-              <li class="nav__item"><a href="/">Home</a></li>
-              <li class="nav__item"><a href="#">Category</a></li>
-              <li class="nav__item"><a href="{% url 'testsite:createThread' %}">Create</a></li>
+              <li class="nav__item"><a href="/">ホーム</a></li>
+              <li class="nav__item"><a href="#">カテゴリー</a></li>
+              <li class="nav__item"><a href="{% url 'testsite:createThread' %}">スレッド作成</a></li>
               <li class="nav__item"><a href="/admin">admin</a></li>
             </ul>
           </nav>
@@ -58,5 +58,6 @@
       </div>
     </div>
     <script src="{% static 'admin/js/header-3.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
   </body>
 </html>

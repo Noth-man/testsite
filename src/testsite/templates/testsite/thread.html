@@ -2,14 +2,14 @@
 {% block title %}thread{% endblock %}
 
 {% block left_content %}
-<div class="thread-title">{{ threads.name }}</div>
+<div class="thread-title"><p>{{ threads.name }}</p></div>
 <div class="message-flexbox">
     {% for comment in comment_list %}
         <div class="message">
             <div class="data-box">
-                <p>{{ comment.pub_date }}</p>
+                <p>{{ forloop.counter }} : {{ comment.pub_date }}</p>
             </div>
-            <div class="body-box">{{ comment.body }}</div>
+            <div class="body-box">{{ comment.body | linebreaksbr }}</div>
         </div>
     {% endfor %}
 </div>

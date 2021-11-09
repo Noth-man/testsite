@@ -8,14 +8,15 @@
 
 .site-content__right {
     width: 325px;
-    margin: 10px 10px 10px 5px; 
+    height: 250px;
+    margin: 15px 10px 10px 5px; 
     background-color: aliceblue;
 }
 
 .site-content__wrapper {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
     padding-top: 1rem;
     padding-bottom: 1rem; }
     @media (min-width: 800px) {
@@ -41,6 +42,25 @@
 .thread-name {
     overflow-wrap: break-word;
     word-break: break-all;
+    margin: 8px;
+}
+
+.thread-name a{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.thread-name a:hover{
+    color: red;
+}
+
+.thread-first-comment {
+    margin: 2px 8px 8px 8px;
+    border-left: 2px dotted #000;
+}
+
+.thread-first-comment p{
+    margin: 3px;
 }
 
 /* thread.html */
@@ -55,6 +75,12 @@
     background-color: aliceblue;
     margin: 5px 0 5px 0;
     border: 1px solid rgb(187, 196, 185);
+}
+
+.thread-title p {
+    margin: 3px;
+    font-size: 22px;
+    font-weight: bold;
 }
 
 .message {

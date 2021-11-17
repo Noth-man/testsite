@@ -1,2 +1,2 @@
-/db/dbdata/
-/src/mysite/.env
+dbdata/
+.env

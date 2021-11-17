@@ -17,5 +17,5 @@ uwsgi 2.0.18 (requirements.txt)
 
 # 起動
 「docker-compose.yml」があるディレクトリで「docker-compose up」  
-docker-compose run django ./manage.py makemigrations testsite
+docker-compose run django ./manage.py makemigrations testsite  
 docker-compose run django ./manage.py migrate

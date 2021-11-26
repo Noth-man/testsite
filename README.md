@@ -21,3 +21,11 @@ uwsgi 2.0.18 (requirements.txt)
 # マイグレーション
 docker-compose run django ./manage.py makemigrations testsite  
 docker-compose run django ./manage.py migrate
+
+# 画面
+ホーム  
+![image](https://user-images.githubusercontent.com/54675731/143544694-5e4d4908-56ec-429e-8b0d-662f7bc9dcd1.png)  
+スレッド  
+![image](https://user-images.githubusercontent.com/54675731/143544713-321bd3f4-1482-4745-a048-f1e6b6327813.png)  
+スレッド作成
+![image](https://user-images.githubusercontent.com/54675731/143544737-40f1ad64-681c-4755-ac3a-2b2ef7614476.png)
